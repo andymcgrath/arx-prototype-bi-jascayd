@@ -21,8 +21,8 @@ export const MANUFACTURER = {
   name: "Boehringer Ingelheim",
   tagline: "Patient assistance & medication access program",
   logo: {
-    colors: "/uploads/1778645911615-imgi-5-boehringer-ingelheim-logo.png",
-    requiresFilter: true,
+    colors: "https://cdn.builder.io/api/v1/image/assets%2F4c828a6b97e546bc967a796675ca457e%2Fc247a0ae707a47099e0b22c5536915bd",
+    requiresFilter: false,
     white: "/uploads/1778645911615-imgi-5-boehringer-ingelheim-logo.png",
   },
   support: {
