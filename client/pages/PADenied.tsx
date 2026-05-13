@@ -112,7 +112,7 @@ export default function PADenied() {
             </div>
             <div className="bg-white rounded-2xl shadow-sm p-5 border border-arx-borders">
               <div className="flex items-center justify-between mb-3">
-                <img src={LOGO_COLOR} alt="Assistivan" className="h-6 w-auto max-w-[100px] object-contain" />
+                <img src={PROGRAM.logo.colors} alt={PROGRAM.name} className="h-6 w-auto max-w-[100px] object-contain" />
                 <span className="text-xs text-arx-body-copy">{dateStr}, {timeStr}</span>
               </div>
               <div className="flex items-start justify-between gap-3 mb-3">
