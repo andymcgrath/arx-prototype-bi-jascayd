@@ -18,14 +18,12 @@
  */
 
 export const MANUFACTURER = {
-  name: "CoAssist",
+  name: "Boehringer Ingelheim",
   tagline: "Patient assistance & medication access program",
   logo: {
-    // TODO: replace with a proper transparent-bg brand-colored asset when available
-    colors: "https://assistrxcoassist.my.site.com/sfsites/c/cms/delivery/media/MCWTFQTGIVD5A3XFI6PW6BBNPJOA?version=1.1&channelId=0apUP00000004A5",
-    // Set to true while the colors logo still requires a CSS filter to match the teal
-    requiresFilter: true,
-    white: "https://cdn.builder.io/api/v1/image/assets%2F4c828a6b97e546bc967a796675ca457e%2Fd4102262e0444fd382b915ea166760c5",
+    colors: "https://cdn.builder.io/api/v1/image/assets%2F4c828a6b97e546bc967a796675ca457e%2Fc247a0ae707a47099e0b22c5536915bd",
+    requiresFilter: false,
+    white: "/uploads/1778645911615-imgi-5-boehringer-ingelheim-logo.png",
   },
   support: {
     label: "Technical Help",
@@ -37,24 +35,24 @@ export const MANUFACTURER = {
     safetyUrl: "#",
     prescribingUrl: "#",
   },
-  copyright: "©2026 AssistRx. All Rights Reserved. Intended for US residents only.",
+  copyright: "©2026 Boehringer Ingelheim. All Rights Reserved. Intended for US residents only.",
 };
 
 export const PROGRAM = {
-  name: "Assistivan",
-  drugDisplayName: "Assistivan",
-  description: "0.8 mg · 30-day supply",
+  name: "Jascayd",
+  drugDisplayName: "JASCAYD (nerandomilast)",
+  description: "18 mg · 30-day supply",
   logo: {
     // Transparent background, brand-colored — use on white/light backgrounds
-    colors: "https://cdn.builder.io/api/v1/image/assets%2F4c828a6b97e546bc967a796675ca457e%2Ffa54f2bf868e40c1a1aa8351cb5b8cd4",
+    colors: "/uploads/1778646057594-imgi-1-jascayd-logo-link-to-homepage.png",
     // Transparent background, all white — use on teal/dark backgrounds
-    white: "https://cdn.builder.io/api/v1/image/assets%2F4c828a6b97e546bc967a796675ca457e%2Fd4102262e0444fd382b915ea166760c5",
+    white: "/uploads/1778647226709-jascayd-logo-white.svg",
   },
   colors: {
     // Applied to --arx-primary, --arx-primary-dark, --arx-primary-80 in global.css
-    primary: "#007178",
-    primaryDark: "#005a5f",
-    primaryLight: "#338D93",
+    primary: "#215048",
+    primaryDark: "#08312a",
+    primaryLight: "#22e37c",
   },
 };
 

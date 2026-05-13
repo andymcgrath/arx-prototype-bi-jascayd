@@ -12,8 +12,8 @@
   :root {
     /* ─── Brand Colors ─── */
     /* Primary Teal / Skobeloff */
-    --arx-primary: 183 100% 22%;        /* #007178 */
-    --arx-primary-80: 183 48% 39%;      /* #338D93 - 80% tint */
+    --arx-primary: 170 42% 22%;        /* #215048 */
+    --arx-primary-80: 148 78% 51%;      /* #22e37c - 80% tint */
     --arx-primary-30: 184 33% 77%;      /* #B3D4D7 - 30% tint */
 
     /* Secondary Sea Blue */
@@ -30,7 +30,7 @@
     --arx-neutral-000: 0 0% 100%;       /* #FFFFFF */
 
     /* ─── Functional ─── */
-    --arx-primary-dark: 184 100% 18%;   /* #005a5f - Darker teal for accessible hover states */
+    --arx-primary-dark: 170 72% 11%;   /* #08312a - Darker teal for accessible hover states */
     --arx-errors: 0 79% 47%;            /* #DB1616 */
     --arx-orange: 33 87% 51%;           /* #EF8A13 */
     --arx-links: 209 70% 43%;           /* #2171B8 */
@@ -49,7 +49,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 300 1% 25%;
 
-    --primary: 183 100% 22%;
+    --primary: 170 42% 22%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 197 51% 38%;

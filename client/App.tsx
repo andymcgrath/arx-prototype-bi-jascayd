@@ -25,6 +25,7 @@ import OrderShipped from "./pages/OrderShipped";
 import MedicationDelivered from "./pages/MedicationDelivered";
 import NotFound from "./pages/NotFound";
 import DesignSystem from "./pages/DesignSystem";
+import Admin from "./pages/Admin";
 import { ChatProvider, useChatContext } from "@/components/ChatContext";
 import ChatModal from "@/components/ChatModal";
 
@@ -53,6 +54,7 @@ function AppRoutes() {
         <Route path="/order-shipped" element={<OrderShipped />} />
         <Route path="/medication-delivered" element={<MedicationDelivered />} />
         <Route path="/design-system" element={<DesignSystem />} />
+        <Route path="/admin" element={<Admin />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>

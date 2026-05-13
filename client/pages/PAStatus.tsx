@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { useChatContext } from "@/components/ChatContext";
 import ProgramLogo from "@/components/brand/ProgramLogo";
 import { PROGRAM, CHATBOT_ICON } from "@/config/branding";
+import { hexToColorFilter } from "@/lib/brandFilter";
 
 export default function PAStatus() {
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ export default function PAStatus() {
           {/* PA Submitted card */}
           <div className="bg-white rounded-2xl shadow-sm p-5 border border-arx-borders">
             <div className="flex items-center justify-between mb-4">
-              <ProgramLogo variant="colors" className="h-8 w-auto max-w-[120px] object-contain" />
+              <ProgramLogo variant="colors" className="h-10 w-auto max-w-[120px] object-contain" />
               <span className="text-xs text-arx-body-copy">{dateStr}, {timeStr}</span>
             </div>
 
@@ -53,7 +54,7 @@ export default function PAStatus() {
               onClick={openChat}
               className="w-full font-semibold py-3.5 rounded-lg flex items-center justify-center gap-2 border-2 border-arx-primary text-arx-primary hover:bg-arx-sky/30 transition-colors"
             >
-              <img src={CHATBOT_ICON} alt="" className="w-4 h-4 object-contain" />
+              <img src={CHATBOT_ICON} alt="" className="w-4 h-4 object-contain" style={{ filter: hexToColorFilter(PROGRAM.colors.primary) }} />
               <span>Have questions? Start a chat</span>
             </button>
           </div>
@@ -70,7 +71,7 @@ export default function PAStatus() {
               </button>
             </div>
             <button className="w-full flex items-center gap-4 text-white rounded-xl px-4 py-3.5 bg-arx-primary hover:bg-arx-primary-dark transition-colors">
-              <ProgramLogo variant="white" className="h-8 w-auto max-w-[120px] object-contain flex-shrink-0" />
+              <ProgramLogo variant="white" className="h-10 w-auto max-w-[120px] object-contain flex-shrink-0" />
               <div className="flex-1 text-left">
                 <p className="text-xs text-white/80">PA submitted</p>
               </div>
