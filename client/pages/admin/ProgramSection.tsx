@@ -1,4 +1,5 @@
 import LogoPicker from "./LogoPicker";
+import ColorPalettePicker from "./ColorPalettePicker";
 
 interface ProgramData {
   name: string;
@@ -69,6 +70,9 @@ export default function ProgramSection({ data, onChange }: Props) {
             onChange={v => handleColorChange("primaryLight", v)}
           />
         </div>
+        <ColorPalettePicker
+          onPickColor={(target, hex) => handleColorChange(target, hex)}
+        />
       </div>
     </div>
   );

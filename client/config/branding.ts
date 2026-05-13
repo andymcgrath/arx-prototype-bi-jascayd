@@ -18,14 +18,12 @@
  */
 
 export const MANUFACTURER = {
-  name: "CoAssist",
+  name: "Boehringer Ingelheim",
   tagline: "Patient assistance & medication access program",
   logo: {
-    // TODO: replace with a proper transparent-bg brand-colored asset when available
-    colors: "https://assistrxcoassist.my.site.com/sfsites/c/cms/delivery/media/MCWTFQTGIVD5A3XFI6PW6BBNPJOA?version=1.1&channelId=0apUP00000004A5",
-    // Set to true while the colors logo still requires a CSS filter to match the teal
+    colors: "/uploads/1778645911615-imgi-5-boehringer-ingelheim-logo.png",
     requiresFilter: true,
-    white: "https://cdn.builder.io/api/v1/image/assets%2F4c828a6b97e546bc967a796675ca457e%2Fd4102262e0444fd382b915ea166760c5",
+    white: "/uploads/1778645911615-imgi-5-boehringer-ingelheim-logo.png",
   },
   support: {
     label: "Technical Help",
@@ -37,7 +35,7 @@ export const MANUFACTURER = {
     safetyUrl: "#",
     prescribingUrl: "#",
   },
-  copyright: "©2026 AssistRx. All Rights Reserved. Intended for US residents only.",
+  copyright: "©2026 Boehringer Ingelheim. All Rights Reserved. Intended for US residents only.",
 };
 
 export const PROGRAM = {
