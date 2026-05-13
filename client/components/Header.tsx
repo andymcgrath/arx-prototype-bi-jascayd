@@ -128,16 +128,12 @@ export default function Header() {
 
           {/* Drawer */}
           <nav className="fixed top-0 left-0 z-50 h-full w-64 bg-white shadow-2xl flex flex-col overflow-y-auto border-r border-arx-borders">
-            {/* Drawer header — teal bg */}
-            <div className="flex items-center justify-between px-5 py-4 flex-shrink-0 bg-arx-primary">
-              <ManufacturerLogo
-                variant="white"
-                className="h-9 w-auto max-w-[140px] object-contain"
-              />
+            {/* Drawer header */}
+            <div className="flex items-center justify-end px-5 py-4 flex-shrink-0 border-b border-arx-borders">
               <button
                 onClick={() => setMenuOpen(false)}
                 aria-label="Close menu"
-                className="text-white/80 hover:text-white"
+                className="text-arx-inactive hover:text-arx-slate transition-colors"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -152,12 +148,13 @@ export default function Header() {
                     <button
                       key={entry.path}
                       onClick={() => handleNav(entry.path)}
-                      className="w-full text-left px-3 py-2.5 rounded-lg text-sm font-semibold transition-colors border-l-2"
+                      className="w-full text-left px-3 py-2.5 rounded-lg text-sm font-semibold transition-colors"
                       style={{
-                        borderLeftColor: isActive ? "#007178" : "transparent",
-                        backgroundColor: isActive ? "#ADE2E3" + "40" : "transparent",
+                        backgroundColor: isActive ? "#ADE2E340" : "transparent",
                         color: isActive ? "#007178" : "#414042",
                       }}
+                      onMouseEnter={e => { if (!isActive) (e.currentTarget as HTMLButtonElement).style.backgroundColor = "#ADE2E320"; }}
+                      onMouseLeave={e => { if (!isActive) (e.currentTarget as HTMLButtonElement).style.backgroundColor = "transparent"; }}
                     >
                       {entry.label}
                     </button>
@@ -176,12 +173,13 @@ export default function Header() {
                           <button
                             key={item.path}
                             onClick={() => handleNav(item.path)}
-                            className="w-full text-left px-3 py-2 rounded-lg text-sm font-medium transition-colors border-l-2"
+                            className="w-full text-left px-3 py-2 rounded-lg text-sm font-medium transition-colors"
                             style={{
-                              borderLeftColor: isActive ? "#007178" : "transparent",
-                              backgroundColor: isActive ? "#ADE2E380" : "transparent",
+                              backgroundColor: isActive ? "#ADE2E340" : "transparent",
                               color: isActive ? "#007178" : "#6F7276",
                             }}
+                            onMouseEnter={e => { if (!isActive) (e.currentTarget as HTMLButtonElement).style.backgroundColor = "#ADE2E320"; }}
+                            onMouseLeave={e => { if (!isActive) (e.currentTarget as HTMLButtonElement).style.backgroundColor = "transparent"; }}
                           >
                             {item.label}
                           </button>
