@@ -62,7 +62,7 @@ export default function Header() {
           <button
             onClick={() => setMenuOpen((v) => !v)}
             className="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-lg transition-colors hover:bg-arx-sky/30"
-            style={{ color: "#007178" }}
+            style={{ color: "#1C1C1C" }}
             aria-label="Open navigation menu"
           >
             {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -76,14 +76,14 @@ export default function Header() {
           {/* Chat / Technical Help */}
           <button
             className="flex-shrink-0 flex items-center gap-2 text-sm font-semibold transition-colors"
-            style={{ color: "#007178" }}
+            style={{ color: "#1C1C1C" }}
             aria-label={MANUFACTURER.support.label}
             onClick={openChat}
-            onMouseEnter={e => (e.currentTarget.style.color = "#338D93")}
-            onMouseLeave={e => (e.currentTarget.style.color = "#007178")}
+            onMouseEnter={e => (e.currentTarget.style.color = "#555555")}
+            onMouseLeave={e => (e.currentTarget.style.color = "#1C1C1C")}
           >
             <span className="hidden sm:inline text-xs">{MANUFACTURER.support.label}</span>
-            <img src={CHATBOT_ICON} alt="" className="w-5 h-5 object-contain" style={{ filter: hexToColorFilter(PROGRAM.colors.primary) }} />
+            <img src={CHATBOT_ICON} alt="" className="w-5 h-5 object-contain" style={{ filter: "brightness(0) opacity(0.8)" }} />
           </button>
         </div>
 

@@ -19,24 +19,24 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-arx-slate text-[10px] mb-1 uppercase tracking-wide">Legal</h4>
             <ul className="space-y-0.5">
-              <li><a href={MANUFACTURER.legal.privacyUrl} className="text-[10px] text-arx-body-copy hover:text-arx-primary transition-colors">Privacy Policy</a></li>
-              <li><a href={MANUFACTURER.legal.termsUrl} className="text-[10px] text-arx-body-copy hover:text-arx-primary transition-colors">Terms of Use</a></li>
+              <li><a href={MANUFACTURER.legal.privacyUrl} className="text-[10px] text-arx-body-copy hover:text-arx-slate transition-colors">Privacy Policy</a></li>
+              <li><a href={MANUFACTURER.legal.termsUrl} className="text-[10px] text-arx-body-copy hover:text-arx-slate transition-colors">Terms of Use</a></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold text-arx-slate text-[10px] mb-1 uppercase tracking-wide">Support</h4>
             <ul className="space-y-0.5">
-              <li><a href="#" className="text-[10px] text-arx-body-copy hover:text-arx-primary transition-colors">Contact Us</a></li>
-              <li><a href={`tel:${MANUFACTURER.support.phone.replace(/-/g, "")}`} className="text-[10px] text-arx-body-copy hover:text-arx-primary transition-colors">{MANUFACTURER.support.phone}</a></li>
+              <li><a href="#" className="text-[10px] text-arx-body-copy hover:text-arx-slate transition-colors">Contact Us</a></li>
+              <li><a href={`tel:${MANUFACTURER.support.phone.replace(/-/g, "")}`} className="text-[10px] text-arx-body-copy hover:text-arx-slate transition-colors">{MANUFACTURER.support.phone}</a></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold text-arx-slate text-[10px] mb-1 uppercase tracking-wide">Safety</h4>
             <ul className="space-y-0.5">
-              <li><a href={MANUFACTURER.legal.safetyUrl} className="text-[10px] text-arx-body-copy hover:text-arx-primary transition-colors">Important Safety Info</a></li>
-              <li><a href={MANUFACTURER.legal.prescribingUrl} className="text-[10px] text-arx-body-copy hover:text-arx-primary transition-colors">Prescribing Information</a></li>
+              <li><a href={MANUFACTURER.legal.safetyUrl} className="text-[10px] text-arx-body-copy hover:text-arx-slate transition-colors">Important Safety Info</a></li>
+              <li><a href={MANUFACTURER.legal.prescribingUrl} className="text-[10px] text-arx-body-copy hover:text-arx-slate transition-colors">Prescribing Information</a></li>
             </ul>
           </div>
         </div>
