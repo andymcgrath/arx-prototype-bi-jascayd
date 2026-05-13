@@ -1,47 +1,42 @@
-<svg viewBox="0 0 640 400" xmlns="http://www.w3.org/2000/svg" width="640" height="400">
-  <!-- Transparent background -->
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" width="800" height="400">
 
-  <!-- Icon: stylized swoosh feather, all white with varying opacity per stripe -->
-  <g transform="translate(28, 55)">
-    <!-- Bottom stripe (widest, most transparent) -->
-    <path d="M8,138 Q55,88 148,108 Q95,122 52,148 Z" fill="white" opacity="0.65"/>
-    <!-- Second stripe -->
-    <path d="M12,116 Q62,60 158,80 Q108,98 48,126 Z" fill="white" opacity="0.75"/>
-    <!-- Third stripe (green/yellow in original) -->
-    <path d="M18,94 Q75,32 168,52 Q118,74 48,104 Z" fill="white" opacity="0.85"/>
-    <!-- Fourth stripe -->
-    <path d="M28,72 Q90,10 178,30 Q130,54 58,84 Z" fill="white" opacity="0.92"/>
-    <!-- Top stripe (smallest, fully opaque) -->
+  <!-- Icon: stylized swoosh, all white with varying opacity -->
+  <g transform="translate(20, 48)">
+    <path d="M8,138 Q55,88 148,108 Q95,122 52,148 Z" fill="white" opacity="0.55"/>
+    <path d="M12,116 Q62,60 158,80 Q108,98 48,126 Z" fill="white" opacity="0.68"/>
+    <path d="M18,94 Q75,32 168,52 Q118,74 48,104 Z" fill="white" opacity="0.80"/>
+    <path d="M28,72 Q90,10 178,30 Q130,54 58,84 Z" fill="white" opacity="0.90"/>
     <path d="M42,50 Q110,-8 192,12 Q146,38 72,62 Z" fill="white" opacity="1.0"/>
   </g>
 
-  <!-- JASCAYD bold italic wordmark -->
+  <!-- JASCAYD — textLength pins it to exactly 540px, preventing overflow -->
   <text
-    x="172"
-    y="196"
+    x="192"
+    y="202"
     font-family="Georgia, 'Times New Roman', serif"
-    font-size="116"
+    font-size="118"
     font-weight="bold"
     font-style="italic"
     fill="white"
-    letter-spacing="-1"
+    textLength="540"
+    lengthAdjust="spacingAndGlyphs"
   >JASCAYD</text>
 
-  <!-- Registered trademark superscript -->
+  <!-- ® superscript -->
   <text
-    x="612"
-    y="148"
+    x="740"
+    y="152"
     font-family="Georgia, serif"
-    font-size="28"
+    font-size="30"
     fill="white"
   >®</text>
 
-  <!-- Generic name in italic -->
+  <!-- Generic name -->
   <text
-    x="320"
-    y="256"
+    x="400"
+    y="268"
     font-family="Georgia, 'Times New Roman', serif"
-    font-size="44"
+    font-size="46"
     fill="white"
     text-anchor="middle"
     font-style="italic"
@@ -49,11 +44,12 @@
 
   <!-- Dosage -->
   <text
-    x="320"
-    y="308"
+    x="400"
+    y="326"
     font-family="Georgia, 'Times New Roman', serif"
-    font-size="34"
+    font-size="36"
     fill="white"
     text-anchor="middle"
   >tablets 18 mg</text>
+
 </svg>
