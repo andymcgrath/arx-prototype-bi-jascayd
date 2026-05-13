@@ -24,7 +24,7 @@ export default function PAStatus() {
           {/* PA Submitted card */}
           <div className="bg-white rounded-2xl shadow-sm p-5 border border-arx-borders">
             <div className="flex items-center justify-between mb-4">
-              <ProgramLogo variant="colors" className="h-8 w-auto max-w-[120px] object-contain" />
+              <ProgramLogo variant="colors" className="h-10 w-auto max-w-[120px] object-contain" />
               <span className="text-xs text-arx-body-copy">{dateStr}, {timeStr}</span>
             </div>
 
@@ -71,7 +71,7 @@ export default function PAStatus() {
               </button>
             </div>
             <button className="w-full flex items-center gap-4 text-white rounded-xl px-4 py-3.5 bg-arx-primary hover:bg-arx-primary-dark transition-colors">
-              <ProgramLogo variant="white" className="h-8 w-auto max-w-[120px] object-contain flex-shrink-0" />
+              <ProgramLogo variant="white" className="h-10 w-auto max-w-[120px] object-contain flex-shrink-0" />
               <div className="flex-1 text-left">
                 <p className="text-xs text-white/80">PA submitted</p>
               </div>
