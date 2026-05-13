@@ -3,7 +3,8 @@ import { Menu, X } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useChatContext } from "@/components/ChatContext";
 import ManufacturerLogo from "@/components/brand/ManufacturerLogo";
-import { MANUFACTURER, CHATBOT_ICON } from "@/config/branding";
+import { MANUFACTURER, CHATBOT_ICON, PROGRAM } from "@/config/branding";
+import { hexToColorFilter } from "@/lib/brandFilter";
 
 const NAV_LINKS = [
   { label: "Home", path: "/" },
@@ -82,7 +83,7 @@ export default function Header() {
             onMouseLeave={e => (e.currentTarget.style.color = "#007178")}
           >
             <span className="hidden sm:inline text-xs">{MANUFACTURER.support.label}</span>
-            <img src={CHATBOT_ICON} alt="" className="w-5 h-5 object-contain" />
+            <img src={CHATBOT_ICON} alt="" className="w-5 h-5 object-contain" style={{ filter: hexToColorFilter(PROGRAM.colors.primary) }} />
           </button>
         </div>
 

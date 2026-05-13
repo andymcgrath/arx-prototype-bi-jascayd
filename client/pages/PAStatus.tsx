@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { useChatContext } from "@/components/ChatContext";
 import ProgramLogo from "@/components/brand/ProgramLogo";
 import { PROGRAM, CHATBOT_ICON } from "@/config/branding";
+import { hexToColorFilter } from "@/lib/brandFilter";
 
 export default function PAStatus() {
   const navigate = useNavigate();
@@ -53,7 +54,7 @@ export default function PAStatus() {
               onClick={openChat}
               className="w-full font-semibold py-3.5 rounded-lg flex items-center justify-center gap-2 border-2 border-arx-primary text-arx-primary hover:bg-arx-sky/30 transition-colors"
             >
-              <img src={CHATBOT_ICON} alt="" className="w-4 h-4 object-contain" />
+              <img src={CHATBOT_ICON} alt="" className="w-4 h-4 object-contain" style={{ filter: hexToColorFilter(PROGRAM.colors.primary) }} />
               <span>Have questions? Start a chat</span>
             </button>
           </div>

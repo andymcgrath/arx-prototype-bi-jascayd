@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { hexToColorFilter } from "@/lib/brandFilter";
 import { CheckCircle, AlertCircle, Loader2, Save, Eye, EyeOff } from "lucide-react";
 import ManufacturerSection from "./admin/ManufacturerSection";
 import ProgramSection from "./admin/ProgramSection";
@@ -19,7 +20,7 @@ interface BrandingData {
     name: string;
     drugDisplayName: string;
     description: string;
-    logo: { colors: string; white: string };
+    logo: { colors: string; white: string; requiresFilter?: boolean };
     colors: { primary: string; primaryDark: string; primaryLight: string };
   };
   chatbotIcon: string;
@@ -37,7 +38,7 @@ const EMPTY: BrandingData = {
     name: "",
     drugDisplayName: "",
     description: "",
-    logo: { colors: "", white: "" },
+    logo: { colors: "", white: "", requiresFilter: false },
     colors: { primary: "#007178", primaryDark: "#005a5f", primaryLight: "#338D93" },
   },
   chatbotIcon: "",
@@ -147,7 +148,7 @@ export default function Admin() {
           {/* Chatbot icon */}
           <div className="bg-white rounded-xl border border-[--arx-borders] p-6 shadow-sm mt-4">
             <h2 className="text-base font-semibold text-[--arx-slate] mb-1">Chatbot Icon</h2>
-            <p className="text-sm text-[--arx-body-copy] mb-4">URL for the floating chat assistant icon</p>
+            <p className="text-sm text-[--arx-body-copy] mb-4">URL for the floating chat assistant icon. Automatically colored to match the primary brand color.</p>
             <input
               type="url"
               value={data.chatbotIcon}
@@ -156,7 +157,27 @@ export default function Admin() {
               className="w-full text-sm border border-[--arx-borders] rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[hsl(var(--arx-primary))] bg-white"
             />
             {data.chatbotIcon && (
-              <img src={data.chatbotIcon} alt="Chatbot icon" className="mt-3 h-10 object-contain" />
+              <div className="mt-3 flex items-center gap-6">
+                <div className="text-center space-y-1">
+                  <p className="text-xs text-[--arx-inactive]">Original</p>
+                  <img src={data.chatbotIcon} alt="Chatbot icon" className="h-10 object-contain" />
+                </div>
+                <div className="text-center space-y-1">
+                  <p className="text-xs text-[--arx-inactive]">With brand color</p>
+                  <img
+                    src={data.chatbotIcon}
+                    alt="Chatbot icon (brand color)"
+                    className="h-10 object-contain"
+                    style={{ filter: hexToColorFilter(data.program.colors.primary) }}
+                  />
+                </div>
+                <div className="text-center space-y-1">
+                  <p className="text-xs text-[--arx-inactive]">On dark bg</p>
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: data.program.colors.primary }}>
+                    <img src={data.chatbotIcon} alt="" className="w-6 h-6 object-contain" style={{ filter: "brightness(0) invert(1)" }} />
+                  </div>
+                </div>
+              </div>
             )}
           </div>
 

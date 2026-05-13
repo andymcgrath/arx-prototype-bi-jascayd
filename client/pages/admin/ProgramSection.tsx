@@ -5,7 +5,7 @@ interface ProgramData {
   name: string;
   drugDisplayName: string;
   description: string;
-  logo: { colors: string; white: string };
+  logo: { colors: string; white: string; requiresFilter?: boolean };
   colors: { primary: string; primaryDark: string; primaryLight: string };
 }
 
@@ -45,6 +45,19 @@ export default function ProgramSection({ data, onChange }: Props) {
           onChange={url => set("logo", { ...data.logo, white: url })}
           bgClass="bg-[hsl(var(--arx-primary))]"
         />
+      </div>
+
+      <div className="flex items-center gap-3">
+        <input
+          id="programRequiresFilter"
+          type="checkbox"
+          checked={!!data.logo.requiresFilter}
+          onChange={e => set("logo", { ...data.logo, requiresFilter: e.target.checked })}
+          className="rounded border-[--arx-borders] text-[hsl(var(--arx-primary))]"
+        />
+        <label htmlFor="programRequiresFilter" className="text-sm text-[--arx-body-copy]">
+          Apply brand color filter to colors logo (auto-tints the logo to match your primary color)
+        </label>
       </div>
 
       {/* Color pickers */}

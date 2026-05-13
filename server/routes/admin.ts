@@ -29,7 +29,7 @@ export const getBranding: RequestHandler = (_req, res) => {
     const mTagline = extract(src, "tagline", "MANUFACTURER");
     const mLogoColors = extractNested(src, "logo", "colors", "MANUFACTURER");
     const mLogoWhite = extractNested(src, "logo", "white", "MANUFACTURER");
-    const mRequiresFilter = src.includes("requiresFilter: true");
+    const mRequiresFilter = extractNestedBool(src, "logo", "requiresFilter", "MANUFACTURER");
     const mPhone = extractNested(src, "support", "phone", "MANUFACTURER");
     const mLabel = extractNested(src, "support", "label", "MANUFACTURER");
     const mCopyright = extract(src, "copyright", "MANUFACTURER");
@@ -40,6 +40,7 @@ export const getBranding: RequestHandler = (_req, res) => {
     const pDescription = extract(src, "description", "PROGRAM");
     const pLogoColors = extractNested(src, "logo", "colors", "PROGRAM");
     const pLogoWhite = extractNested(src, "logo", "white", "PROGRAM");
+    const pRequiresFilter = extractNestedBool(src, "logo", "requiresFilter", "PROGRAM");
     const pPrimary = extractNested(src, "colors", "primary", "PROGRAM");
     const pPrimaryDark = extractNested(src, "colors", "primaryDark", "PROGRAM");
     const pPrimaryLight = extractNested(src, "colors", "primaryLight", "PROGRAM");
@@ -58,7 +59,7 @@ export const getBranding: RequestHandler = (_req, res) => {
         name: pName,
         drugDisplayName: pDrugDisplayName,
         description: pDescription,
-        logo: { colors: pLogoColors, white: pLogoWhite },
+        logo: { colors: pLogoColors, white: pLogoWhite, requiresFilter: pRequiresFilter },
         colors: { primary: pPrimary, primaryDark: pPrimaryDark, primaryLight: pPrimaryLight },
       },
       chatbotIcon,
@@ -121,6 +122,7 @@ export const PROGRAM = {
     colors: ${JSON.stringify(p.logo.colors)},
     // Transparent background, all white — use on teal/dark backgrounds
     white: ${JSON.stringify(p.logo.white)},
+    requiresFilter: ${p.logo.requiresFilter ? "true" : "false"},
   },
   colors: {
     // Applied to --arx-primary, --arx-primary-dark, --arx-primary-80 in global.css
@@ -197,6 +199,24 @@ function extractNested(src: string, parent: string, key: string, block: string):
   const re = new RegExp(`\\b${key}:\\s*"([^"]*)"`, "m");
   const m = re.exec(parentSlice);
   return m ? m[1] : "";
+}
+
+function extractNestedBool(src: string, parent: string, key: string, block: string): boolean {
+  const blockStart = src.indexOf(`export const ${block}`);
+  if (blockStart === -1) return false;
+  let depth = 0, blockEnd = blockStart, started = false;
+  for (let i = blockStart; i < src.length; i++) {
+    if (src[i] === "{") { depth++; started = true; }
+    if (src[i] === "}") { depth--; }
+    if (started && depth === 0) { blockEnd = i; break; }
+  }
+  const slice = src.slice(blockStart, blockEnd + 1);
+  const parentIdx = slice.indexOf(`${parent}:`);
+  if (parentIdx === -1) return false;
+  const parentSlice = slice.slice(parentIdx);
+  const re = new RegExp(`\\b${key}:\\s*(true|false)`, "m");
+  const m = re.exec(parentSlice);
+  return m ? m[1] === "true" : false;
 }
 
 function extractTopLevel(src: string, varName: string): string {
