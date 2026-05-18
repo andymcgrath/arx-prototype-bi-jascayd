@@ -94,18 +94,18 @@ export default function Header() {
               <a
                 href={MANUFACTURER.legal.safetyUrl}
                 className="text-[11px] font-semibold transition-colors whitespace-nowrap"
-                style={{ color: "#007178" }}
-                onMouseEnter={e => (e.currentTarget.style.color = "#338D93")}
-                onMouseLeave={e => (e.currentTarget.style.color = "#007178")}
+                style={{ color: "hsl(var(--arx-primary))" }}
+                onMouseEnter={e => (e.currentTarget.style.color = "hsl(var(--arx-primary-dark))")}
+                onMouseLeave={e => (e.currentTarget.style.color = "hsl(var(--arx-primary))")}
               >
                 Important Safety Information
               </a>
               <a
                 href={MANUFACTURER.legal.prescribingUrl}
                 className="text-[11px] font-semibold transition-colors whitespace-nowrap"
-                style={{ color: "#007178" }}
-                onMouseEnter={e => (e.currentTarget.style.color = "#338D93")}
-                onMouseLeave={e => (e.currentTarget.style.color = "#007178")}
+                style={{ color: "hsl(var(--arx-primary))" }}
+                onMouseEnter={e => (e.currentTarget.style.color = "hsl(var(--arx-primary-dark))")}
+                onMouseLeave={e => (e.currentTarget.style.color = "hsl(var(--arx-primary))")}
               >
                 Prescribing Information
               </a>
