@@ -21,9 +21,9 @@
     "appId": "com.yourname.yourapp",
     "productName": "Your App Name",
     "files": [
-      "build/**/*",
+      "dist/spa/**/*",
       "public/electron.js"
-    ],
+    ]
     "directories": {
       "output": "dist"
     },
