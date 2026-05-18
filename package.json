@@ -1,16 +1,45 @@
+
 {
   "name": "fusion-starter",
   "private": true,
   "type": "module",
+  "main": "public/electron.js",
+  "homepage": "./",
   "scripts": {
     "dev": "vite --port 8080",
-    "build": "npm run build:client && npm run build:server",
     "build:client": "vite build",
     "build:server": "vite build --config vite.config.server.ts",
+    "build:react": "npm run build:client && npm run build:server",
     "start": "node dist/server/node-build.mjs",
     "test": "vitest --run",
     "format.fix": "prettier --write .",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "electron:dev": "concurrently \"npm run dev\" \"wait-on http://localhost:8080 && electron .\"",
+    "electron:build": "npm run build:react && electron-builder"
+  },
+  "build": {
+    "appId": "com.yourname.yourapp",
+    "productName": "Your App Name",
+    "files": [
+      "build/**/*",
+      "public/electron.js"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "publish": {
+      "provider": "github",
+      "releaseType": "release"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
   },
   "dependencies": {
     "@types/multer": "^2.1.0",
@@ -92,14 +121,5 @@
     "vaul": "^1.1.2",
     "vite": "^8.0.2",
     "vitest": "^4.1.0"
-  },
-  "packageManager": "pnpm@10.33.2+sha512.a90faf6feeab71ad6c6e57f94e0fe1a12f5dcc22cd754db40ae9593eb6a3e0b6b12e3540218bb37ae083404b1f2ce6db2a4121e979829b4aff94b99f49da1cf8",
-  "pkg": {
-    "assets": [
-      "dist/spa/*"
-    ],
-    "scripts": [
-      "dist/server/**/*.js"
-    ]
   }
 }
