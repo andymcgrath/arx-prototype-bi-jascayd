@@ -23,7 +23,7 @@
     "files": [
       "dist/spa/**/*",
       "public/electron.js"
-    ]
+    ],
     "directories": {
       "output": "dist"
     },
