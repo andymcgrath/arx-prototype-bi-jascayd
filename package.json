@@ -10,12 +10,12 @@
     "dev": "vite --port 8080",
     "build:client": "vite build",
     "build:server": "vite build --config vite.config.server.ts",
-    "build:react": "npm run build:client && npm run build:server",
+    "build:react": "pnpm run build:client && pnpm run build:server",
     "start": "node dist/server/node-build.mjs",
     "test": "vitest --run",
     "format.fix": "prettier --write .",
     "typecheck": "tsc",
-    "electron:dev": "concurrently \"npm run dev\" \"wait-on http://localhost:8080 && electron .\"",
+    "electron:dev": "concurrently \"pnpm run dev\" \"wait-on http://localhost:8080 && electron .\"",
     "electron:build": "pnpm run build:react && electron-builder"
   },
   "build": {
